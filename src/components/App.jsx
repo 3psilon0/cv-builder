@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { FaGithub } from 'react-icons/fa6'
-import { aishaMalik } from '../sampleData.js'
+import { spongebob } from '../sampleData.js'
 import Preview from './Preview.jsx'
 import Editor from './Editor.jsx'
 import '../index.css'
@@ -21,7 +21,7 @@ function App() {
     //   experience: [],
     //   education: []
     // }
-    aishaMalik
+    spongebob
   );
   
   useEffect(() => {
@@ -45,7 +45,7 @@ function App() {
       <Editor data={data} handleData={handleData} />
 
       <footer className='flex justify-center text-sm text-slate-400 mt-5'>
-        <h1 className='flex items-center gap-1'>Made by {<FaGithub/>} 3psilon0 </h1>
+        <h1 className='flex items-center gap-1'>Made by <a className='flex items-center gap-1' href="https://github.com/3psilon0" target="_blank" rel="noopener noreferrer">{<FaGithub/>} 3psilon0</a> </h1>
       </footer>
 
     </div>
