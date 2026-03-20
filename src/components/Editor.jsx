@@ -3,11 +3,11 @@ import { FaAngleDown, FaCircleUser, FaGraduationCap } from 'react-icons/fa6';
 import '../index.css'
 
 
-function Accordion({title, icon, children}) {
-    const [isOpen, setIsOpen] = useState(false);
+function Accordion({title, icon, open = false , children}) {
+    const [isOpen, setIsOpen] = useState(open);
     
     return (
-        <div className='bg-[#051E3A] w-full rounded-lg p-5'>
+        <div className='bg-[#061c34] w-full rounded-lg p-4'>
 
             <div className='flex items-center gap-4'>
                 <button onClick={() => {setIsOpen(!isOpen)}} className='rounded-lg cursor-pointer'>
@@ -48,32 +48,32 @@ function Editor({data, handleData}) {
     
 
     return (
-        <div className='flex flex-col gap-5'>
-            <Accordion title='General Information' icon={<FaCircleUser/>}>
+        <div className='grow-2 flex flex-col gap-5'>
+            <Accordion title='General Information' icon={<FaCircleUser/>} open={true}>
                 <div className='grid gap-3 p-5'>
                     <label htmlFor="name" className='flex flex-col'>
                         <span>Name</span>
-                        <input className='outline-0 border-2 border-sky-900 rounded-lg p-1 mt-2' type="text" name='name' id='name' onChange={handleGeneralInput} value={data.personal.name} />
+                        <input className='outline-0 border-2 border-sky-900 rounded-lg p-2 mt-2' type="text" name='name' id='name' onChange={handleGeneralInput} value={data.personal.name} />
                     </label>
 
                     <label htmlFor="phone" className='flex flex-col'>
                         <span>Phone</span>
-                        <input className='outline-0 border-2 border-sky-900 rounded-lg p-1 mt-2' type="tel" name='phone' id='phone' onChange={handleGeneralInput} value={data.personal.phone} />
+                        <input className='outline-0 border-2 border-sky-900 rounded-lg p-2 mt-2' type="tel" name='phone' id='phone' onChange={handleGeneralInput} value={data.personal.phone} />
                     </label>
 
                     <label htmlFor="email" className='flex flex-col'>
                         <span>Email</span>
-                        <input className='outline-0 border-2 border-sky-900 rounded-lg p-1 mt-2' type="email" name='email' id='email' onChange={handleGeneralInput} value={data.personal.email} />
+                        <input className='outline-0 border-2 border-sky-900 rounded-lg p-2 mt-2' type="email" name='email' id='email' onChange={handleGeneralInput} value={data.personal.email} />
                     </label>
 
                     <label htmlFor="profession" className='flex flex-col'>
                         <span>Profession</span>
-                        <input className='outline-0 border-2 border-sky-900 rounded-lg p-1 mt-2' type="text" name='profession' id='profession' onChange={handleGeneralInput} value={data.personal.profession} />
+                        <input className='outline-0 border-2 border-sky-900 rounded-lg p-2 mt-2' type="text" name='profession' id='profession' onChange={handleGeneralInput} value={data.personal.profession} />
                     </label>
 
                     <label htmlFor="location" className='flex flex-col'>
                         <span>Location</span>
-                        <input className='outline-0 border-2 border-sky-900 rounded-lg p-1 mt-2 col-span-full' type="text" name='location' id='location' onChange={handleGeneralInput} value={data.personal.location} />
+                        <input className='outline-0 border-2 border-sky-900 rounded-lg p-2 mt-2 col-span-full' type="text" name='location' id='location' onChange={handleGeneralInput} value={data.personal.location} />
                     </label>
 
 

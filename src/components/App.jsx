@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
-import '../index.css'
+import { FaGithub } from 'react-icons/fa6'
 import { aishaMalik } from '../sampleData.js'
 import Preview from './Preview.jsx'
 import Editor from './Editor.jsx'
+import '../index.css'
 
 function App() {
   
@@ -35,13 +36,17 @@ function App() {
   <>
   <div className='flex justify-between h-screen'>
 
-    <div className='bg-[#062243] h-full w-150 px-10 py-5 overflow-y-auto'>
+    <div className='flex flex-col bg-[#062243] h-full w-150 px-10 py-5 overflow-y-auto'>
 
       <header className='mt-5 mb-10 w-full'>
         <h1 className='text-2xl text-center'>CV Builder</h1>
       </header>
 
       <Editor data={data} handleData={handleData} />
+
+      <footer className='flex justify-center text-sm text-slate-400 mt-5'>
+        <h1 className='flex items-center gap-1'>Made by {<FaGithub/>} 3psilon0 </h1>
+      </footer>
 
     </div>
 
