@@ -45,7 +45,7 @@ function AboutMe({aboutme}) {
         return null
     }
     return (
-        <section className='flex flex-col gap-5 my-10'>
+        <section className='flex flex-col gap-5 my-5'>
             <h2 className='text-xl font-bold border-b border-cv-primary pb-2'>ABOUT ME</h2>
             <p className='text-xs tracking-wide text-justify'>{aboutme}</p>
         </section>
@@ -58,7 +58,7 @@ function Education({programs}) {
     }
     
     return (
-        <section className='flex flex-col gap-5 my-10'>
+        <section className='flex flex-col gap-5 my-5'>
             <h2 className='text-xl font-bold border-b border-cv-primary pb-2'>EDUCATION</h2>
             {
                 programs.map((program, index) => {
@@ -88,7 +88,7 @@ function Experience({work}) {
     }
     
     return (
-        <section className='flex flex-col gap-5 my-10'>
+        <section className='flex flex-col gap-5 my-5'>
             <h2 className='text-xl font-bold border-b border-cv-primary pb-2'>EXPERIENCE</h2>
             {
                 work.map((place, index) => {
@@ -118,7 +118,7 @@ function Skills({skills}) {
     }
 
     return (
-        <section className='flex flex-col gap-5 my-10'>
+        <section className='flex flex-col gap-5 my-5'>
             <h2 className='text-xl font-bold border-b border-cv-primary pb-2'>SKILLS</h2>
             <div className='grid grid-cols-4 gap-2 text-xs tracking-wide'>
                 {
@@ -138,7 +138,7 @@ function Skills({skills}) {
 
 function Preview({data}) {
     return (
-        <div className='bg-[#f9f9f9] text-cv-primary font-Montserrat w-200 min-h-280 p-15 box-border'>
+        <div className='bg-[#f9f9f9] text-cv-primary font-Montserrat w-200 min-h-280 p-15 box-border flex flex-col justify-between'>
             <PreviewHeader name={data.personal.name} profession={data.personal.profession}/>
             <Contact email={data.personal.email} phone={data.personal.phone} location={data.personal.location} />
             <AboutMe aboutme={data.personal.aboutme} />
