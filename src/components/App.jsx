@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { FaGithub } from 'react-icons/fa6'
-import { spongebob } from '../sampleData.js'
+import { ahmedKhan } from '../sampleData.js'
 import Preview from './Preview.jsx'
 import Editor from './Editor.jsx'
 import '../index.css'
@@ -21,28 +21,77 @@ function App() {
     //   experience: [],
     //   education: []
     // }
-    spongebob
+    ahmedKhan
   );
-  
-  useEffect(() => {
-    document.title = "CV Builder";
-  }, [])
 
-  const handleData = (obj) => {
-    setData(obj);
+  const updatePersonal = (field, value) => {
+    setData(prev => {
+      return {
+        ...prev,
+        personal: {
+          ...prev.personal,
+          [field]: value
+        }
+      }
+    });
+  }
+
+  const addGenListItem = (section) => {
+    const id = crypto.randomUUID();
+
+    setData(prev => {
+      return {
+        ...prev,
+        [section]: [
+          ...prev[section],
+          {
+            id: id,
+            from: "",
+            to: "",
+            location: "",
+            title: "",
+            description: ""
+          }
+        ]
+      }
+    });
+
+    return id;
+  }
+
+  const delGenListitem = (section, itemId) => {
+    setData(prev => {
+      return {
+        ...prev,
+        [section]: prev[section].filter(item => item.id !== itemId)
+      }
+    });
+  }
+
+  const updateGenListItem = (section, itemId, field, value) => {
+    setData(prev => {
+      return {
+        ...prev,
+
+      }
+    });
+  }
+
+  const download = () => {
   }
 
  return (
   <>
   <div className='flex justify-between h-screen'>
 
-    <div className='flex flex-col bg-[#062243] h-full w-150 px-10 py-5 overflow-y-auto'>
+    <div className='flex flex-col bg-[#062243] h-full w-150 px-10 py-5 overflow-y-auto print:hidden'>
 
-      <header className='mt-5 mb-10 w-full'>
+      <header className='mt-5 mb-8 w-full border-b border-slate-600 pb-6'>
         <h1 className='text-2xl text-center'>CV Builder</h1>
+        <button className='border border-slate-200 p-2 text-xs rounded-lg cursor-pointer' onClick={download}>Download</button>
       </header>
 
-      <Editor data={data} handleData={handleData} />
+      <Editor data={data} updatePersonal={updatePersonal} />
 
       <footer className='flex justify-center text-sm text-slate-400 mt-5'>
         <h1 className='flex items-center gap-1'>Made by <a className='flex items-center gap-1' href="https://github.com/3psilon0" target="_blank" rel="noopener noreferrer">{<FaGithub/>} 3psilon0</a> </h1>
