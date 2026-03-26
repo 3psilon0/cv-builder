@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { FaAngleDown, FaCircleUser, FaGraduationCap, FaBriefcase, FaScroll } from 'react-icons/fa6';
-import EditorGeneral from './EditorGeneral';
+import EditorPersonal from './EditorPersonal';
 import '../index.css'
 
 
@@ -8,7 +8,7 @@ function Accordion({title, icon, open = false , children}) {
     const [isOpen, setIsOpen] = useState(open);
     
     return (
-        <div className='bg-[#061c34] w-full rounded-lg p-4'>
+        <div className='bg-[#061c34] w-full rounded-2xl p-4'>
 
             <div className='flex items-center gap-4'>
                 <button onClick={() => {setIsOpen(!isOpen)}} className='rounded-lg cursor-pointer'>
@@ -37,12 +37,13 @@ function Accordion({title, icon, open = false , children}) {
 );
 }
 
-function Editor({data, handleData}) {
+function Editor({data, updatePersonal}) {
     
     return (
         <div className='grow-2 flex flex-col gap-5'>
+
             <Accordion title='General Information' icon={<FaCircleUser/>} open={true}>
-                <EditorGeneral data={data} handleData={handleData} />
+                <EditorPersonal {...data.personal} updatePersonal={updatePersonal} />
             </Accordion>
 
             <Accordion title='Education' icon={<FaGraduationCap/>}>
