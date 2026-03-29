@@ -9,6 +9,6 @@
 
 @layer base {
     body {
-        @apply bg-[#04162e] text-slate-100
+        @apply bg-[#04162e] text-slate-100 print:p-0
     }
 }
