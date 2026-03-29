@@ -47,7 +47,7 @@ function AboutMe({aboutme}) {
     return (
         <section className='flex flex-col gap-5 my-5'>
             <h2 className='text-xl font-bold border-b border-cv-primary pb-2'>ABOUT ME</h2>
-            <p className='text-xs tracking-wide text-justify'>{aboutme}</p>
+            <p className='text-xs tracking-wide text-justify whitespace-pre-line'>{aboutme}</p>
         </section>
     );
 }
@@ -71,7 +71,7 @@ function Education({programs}) {
                             </div>
                             <div className='flex flex-col justify-center items-start gap-2'>
                                 <h3 className='font-bold'>{program.title}</h3>
-                                <p>{program.description}</p>
+                                <p className='whitespace-pre-line'>{program.description}</p>
                             </div>
                         </div>
 
@@ -101,7 +101,7 @@ function Experience({work}) {
                             </div>
                             <div className='flex flex-col justify-center gap-2'>
                                 <h3 className='font-bold'>{place.title}</h3>
-                                <p>{place.description}</p>
+                                <p className='whitespace-pre-line'>{place.description}</p>
                             </div>
                         </div>
 
