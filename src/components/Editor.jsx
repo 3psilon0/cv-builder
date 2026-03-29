@@ -8,7 +8,7 @@ function Accordion({ title, icon, open = false, children }) {
     const [isOpen, setIsOpen] = useState(open);
 
     return (
-        <div className="bg-[#061c34] w-full rounded-2xl p-4">
+        <div className="bg-[#061c34] border-2 border-sky-950 w-full rounded-xl p-4">
             <div className="flex items-center gap-4">
                 <button
                     onClick={() => {
