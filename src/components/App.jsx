@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { FaGithub } from 'react-icons/fa6'
-import { ahmedKhan } from '../sampleData.js'
+import { usmanRaza } from '../sampleData.js'
 import Preview from './Preview.jsx'
 import Editor from './Editor.jsx'
 import '../index.css'
@@ -21,7 +21,7 @@ function App() {
     //   experience: [],
     //   education: []
     // }
-    ahmedKhan
+    usmanRaza
   );
 
   const updatePersonal = (field, value) => {
@@ -59,7 +59,7 @@ function App() {
     return id;
   }
 
-  const delGenListitem = (section, itemId) => {
+  const delGenListItem = (section, itemId) => {
     setData(prev => {
       return {
         ...prev,
@@ -72,12 +72,26 @@ function App() {
     setData(prev => {
       return {
         ...prev,
-
+        [section]: prev[section].map(item => {
+          if(item.id === itemId){
+            return {
+              ...item,
+              [field]: value
+            }
+          }
+          else {
+            return item;
+          }
+        })
       }
     });
   }
 
-  const download = () => {
+  const handlers = {
+    updateGenListItem,
+    addGenListItem,
+    delGenListItem,
+    updatePersonal
   }
 
  return (
@@ -88,10 +102,10 @@ function App() {
 
       <header className='mt-5 mb-8 w-full border-b border-slate-600 pb-6'>
         <h1 className='text-2xl text-center'>CV Builder</h1>
-        <button className='border border-slate-200 p-2 text-xs rounded-lg cursor-pointer' onClick={download}>Download</button>
+        <button className='text-slate-400 border border-slate-500 p-1.5 text-sm rounded-lg cursor-pointer' onClick={() => {window.print()}}>Print</button>
       </header>
 
-      <Editor data={data} updatePersonal={updatePersonal} />
+      <Editor data={data} {...handlers} />
 
       <footer className='flex justify-center text-sm text-slate-400 mt-5'>
         <h1 className='flex items-center gap-1'>Made by <a className='flex items-center gap-1' href="https://github.com/3psilon0" target="_blank" rel="noopener noreferrer">{<FaGithub/>} 3psilon0</a> </h1>
@@ -101,7 +115,7 @@ function App() {
 
 
     <div className='flex flex-col items-center w-full h-full overflow-y-auto'>
-      <div className='py-10'>
+      <div className='py-10 print:p-0'>
         <Preview data={data} />
       </div>
     </div>
