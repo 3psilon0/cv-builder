@@ -3,6 +3,7 @@ import { FaAngleDown, FaCircleUser, FaGraduationCap, FaBriefcase, FaScroll } fro
 import EditorPersonal from "./EditorPersonal";
 import EditorGenList from "./EditorGenList";
 import "../index.css";
+import EditorSkillList from "./EditorSkillList";
 
 function Accordion({ title, icon, open = false, children }) {
     const [isOpen, setIsOpen] = useState(open);
@@ -37,7 +38,7 @@ function Accordion({ title, icon, open = false, children }) {
     );
 }
 
-function Editor({ data, updatePersonal, addGenListItem, delGenListItem, updateGenListItem }) {
+function Editor({ data, updatePersonal, addGenListItem, delGenListItem, updateGenListItem, addSkill, delSkill, updateSkill }) {
     return (
         <div className="grow-2 flex flex-col gap-5">
             <Accordion title="General Information" icon={<FaCircleUser />} open={true}>
@@ -61,9 +62,10 @@ function Editor({ data, updatePersonal, addGenListItem, delGenListItem, updateGe
             </Accordion>
 
             <Accordion title="Skills" icon={<FaScroll />}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat ex quos fuga cum
-                enim blanditiis non, nobis a reiciendis repudiandae. Beatae laborum voluptates fugit
-                eaque consequatur earum natus ipsum.
+                <EditorSkillList
+                    skillData={data.skills}
+                    actions={{addSkill, delSkill, updateSkill}}
+                />
             </Accordion>
         </div>
     );
