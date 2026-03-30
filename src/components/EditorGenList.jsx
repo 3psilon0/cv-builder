@@ -100,10 +100,10 @@ function ItemContainer({ sectionName, itemList, handleAdd, handleEdit, handleDel
                     }
                 }}
             >
-                <div className="grow flex flex-col  gap-2">
-                    <h1 className="text-lg font-bold">{item.title}</h1>
-                    <h2 className="text-slate-300 ">{item.location}</h2>
-                    <h3 className="text-slate-400 text-xs italic">
+                <div className="grow flex flex-col gap-2">
+                    <h1 className="text-lg font-bold w-50 overflow-hidden text-ellipsis whitespace-nowrap">{item.title}</h1>
+                    <h2 className="text-slate-300 w-50 overflow-hidden text-ellipsis whitespace-nowrap ">{item.location}</h2>
+                    <h3 className="text-slate-400 text-xs italic w-50 overflow-hidden text-ellipsis whitespace-nowrap">
                         {item.from} - {item.to}
                     </h3>
                 </div>
