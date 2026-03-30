@@ -20,6 +20,7 @@ function EditorPersonal({name, phone, email, profession, location, aboutme, upda
                     id="name"
                     onChange={handleGeneralInput}
                     value={name}
+                    placeholder='Tim Cook'
                 />
             </label>
 
@@ -32,6 +33,7 @@ function EditorPersonal({name, phone, email, profession, location, aboutme, upda
                     id="phone"
                     onChange={handleGeneralInput}
                     value={phone}
+                    placeholder='+123-456-789'
                 />
             </label>
 
@@ -44,6 +46,7 @@ function EditorPersonal({name, phone, email, profession, location, aboutme, upda
                     id="email"
                     onChange={handleGeneralInput}
                     value={email}
+                    placeholder='tcook@apple.com'
                 />
             </label>
 
@@ -56,6 +59,7 @@ function EditorPersonal({name, phone, email, profession, location, aboutme, upda
                     id="profession"
                     onChange={handleGeneralInput}
                     value={profession}
+                    placeholder='CEO'
                 />
             </label>
 
@@ -68,6 +72,7 @@ function EditorPersonal({name, phone, email, profession, location, aboutme, upda
                     id="location"
                     onChange={handleGeneralInput}
                     value={location}
+                    placeholder='Palo Alto, California'
                 />
             </label>
 
@@ -80,6 +85,7 @@ function EditorPersonal({name, phone, email, profession, location, aboutme, upda
                     id="aboutme"
                     onChange={handleGeneralInput}
                     value={aboutme}
+                    placeholder='Visionary CEO of Apple, driving innovation, operational excellence, and a strong commitment to privacy and sustainability while expanding global impact beyond technology.'
                 />
             </label>
         </div>
