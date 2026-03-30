@@ -84,16 +84,42 @@ function App() {
         });
     };
 
-    const addSkill = (skill) => {
-      const id = crypto.randomUUID();
-
+    const addSkill = () => {
       setData((prev) => {
           return {
               ...prev,
-              skills: [...prev.skills, {id, skill}],
+              skills: [...prev.skills, {id: crypto.randomUUID(), skill: ''}],
           };
       });
     };
+
+    const delSkill = (skillId) => {
+      setData(prev => {
+        return {
+          ...prev,
+          skills: prev.skills.filter(skillItem => skillItem.id !== skillId)
+        }
+      })
+    }
+
+    const updateSkill = (skillId, value) => {
+      setData(prev => {
+        return {
+          ...prev,
+          skills: prev.skills.map(skillItem => {
+            if(skillItem.id === skillId) {
+              return {
+                ...skillItem,
+                skill: value
+              }
+            }
+            else {
+              return skillItem;
+            }
+          })
+        }
+      })
+    }
 
     const handlers = {
         updateGenListItem,
@@ -101,6 +127,8 @@ function App() {
         delGenListItem,
         updatePersonal,
         addSkill,
+        delSkill,
+        updateSkill
     };
 
     return (
