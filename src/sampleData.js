@@ -1,99 +1,50 @@
-const usmanRaza = {
+const spongeBob = {
   personal: {
-    name: "Usman Raza",
-    email: "usman.raza@gmail.com",
-    phone: "+92-333-4567890",
-    location: "Islamabad, Pakistan",
-    profession: "Full Stack Developer",
-    aboutme: "Full stack developer with 6+ years of experience building end-to-end web applications. Strong in backend systems and API design."
+    name: "SpongeBob SquarePants",
+    email: "spongebob@bikinibottom.com",
+    phone: "+00-000-0000000",
+    location: "Bikini Bottom",
+    profession: "Fry Cook",
+    aboutme: "Enthusiastic and hardworking fry cook with a passion for making the perfect Krabby Patty. Known for positivity, strong work ethic, and exceptional customer service."
   },
   skills: [
-    "JavaScript",
-    "Node.js",
-    "Express.js",
-    "React",
-    "MongoDB",
-    "PostgreSQL",
-    "Docker",
-    "CI/CD"
+    { id: "1f2e3d4c-5b6a-47e8-9c0d-111111111111", skill: "Krabby Patty Preparation" },
+    { id: "2a3b4c5d-6e7f-48a9-b1c2-222222222222", skill: "Customer Service Excellence" },
+    { id: "3c4d5e6f-7a8b-49c0-d2e3-333333333333", skill: "Time Management" },
+    { id: "4d5e6f7a-8b9c-40d1-e3f4-444444444444", skill: "Jellyfishing" },
+    { id: "5e6f7a8b-9c0d-41e2-f4a5-555555555555", skill: "Bubble Blowing" },
+    { id: "6f7a8b9c-0d1e-42f3-a5b6-666666666666", skill: "Team Collaboration" },
+    { id: "7a8b9c0d-1e2f-43a4-b6c7-777777777777", skill: "Problem Solving" },
+    { id: "8b9c0d1e-2f3a-44b5-c7d8-888888888888", skill: "Optimism & Positivity" }
   ],
   experience: [
     {
-      id: "d4e6f8a1-3b5c-4d6e-9f1a-4567890123de",
-      from: "2021",
+      id: "9c0d1e2f-3a4b-45c6-d8e9-999999999999",
+      from: "1999",
       to: "Present",
-      location: "Innovatech",
-      title: "Full Stack Developer",
-      description: "Designed and developed REST APIs and microservices. Improved system scalability and reduced API latency by 40%."
+      location: "Krusty Krab",
+      title: "Fry Cook",
+      description: "Consistently delivers high-quality Krabby Patties with speed and precision. Recognized as Employee of the Month multiple times. Maintains kitchen efficiency and cleanliness."
     },
     {
-      id: "e5f7a9b2-4c6d-4e7f-0a2b-5678901234ef",
-      from: "2019",
-      to: "2021",
-      location: "Softify Solutions",
-      title: "Backend Developer",
-      description: "Built backend services and handled database design. Worked closely with frontend teams for seamless integration."
+      id: "0d1e2f3a-4b5c-46d7-e9f0-aaaaaaaaaaaa",
+      from: "1998",
+      to: "1999",
+      location: "Various Odd Jobs",
+      title: "Trainee",
+      description: "Explored multiple roles including lifeguarding and delivery services. Built foundational skills in responsibility and perseverance."
     }
   ],
   education: [
     {
-      id: "f6a8b0c3-5d7e-4f8a-1b3c-6789012345fa",
-      from: "2015",
-      to: "2019",
-      location: "NUST",
-      title: "BS Computer Science",
-      description: "Focused on backend systems, databases, and distributed computing."
+      id: "1e2f3a4b-5c6d-47e8-f0a1-bbbbbbbbbbbb",
+      from: "1995",
+      to: "1998",
+      location: "Mrs. Puff's Boating School",
+      title: "Boating Student",
+      description: "Studied boating safety and driving skills. Demonstrated persistence despite repeated challenges in practical exams."
     }
   ]
 };
 
-const saraAli = {
-  personal: {
-    name: "Sara Ali",
-    email: "sara.ali@gmail.com",
-    phone: "+92-321-9876543",
-    location: "Lahore, Pakistan",
-    profession: "Frontend Engineer",
-    aboutme: "Passionate frontend developer with 4+ years of experience crafting responsive and accessible web applications. Focused on clean UI and performance."
-  },
-  skills: [
-    "JavaScript (ES6+)",
-    "React",
-    "Next.js",
-    "TypeScript",
-    "Tailwind CSS",
-    "Redux Toolkit",
-    "Accessibility (a11y)",
-    "Unit Testing"
-  ],
-  experience: [
-    {
-      id: "a1f3c2d4-7b9e-4c1a-9f0e-1234567890ab",
-      from: "2022",
-      to: "Present",
-      location: "DevSphere",
-      title: "Frontend Engineer",
-      description: "Built scalable UI systems and improved performance across multiple dashboards. Reduced render times by 30%."
-    },
-    {
-      id: "b2e4d6f8-1c3a-4b2e-8d9f-2345678901bc",
-      from: "2020",
-      to: "2022",
-      location: "CodeCrafters",
-      title: "Junior Frontend Developer",
-      description: "Implemented responsive UI components and collaborated with backend teams to integrate APIs."
-    }
-  ],
-  education: [
-    {
-      id: "c3d5e7f9-2a4b-4c3d-9e0f-3456789012cd",
-      from: "2016",
-      to: "2020",
-      location: "Punjab University",
-      title: "BS Software Engineering",
-      description: "Studied core software engineering concepts, UI/UX, and web technologies."
-    }
-  ]
-};
-
-export {usmanRaza, saraAli}
+export {spongeBob}
