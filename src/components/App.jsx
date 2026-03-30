@@ -1,26 +1,24 @@
 import { useState } from "react";
 import { FaGithub, FaPrint } from "react-icons/fa6";
-import { usmanRaza } from "../sampleData.js";
+import { spongeBob } from "../sampleData.js";
 import Preview from "./Preview.jsx";
 import Editor from "./Editor.jsx";
 import "../index.css";
 
 function App() {
-    const [data, setData] = useState(
-        {
-          personal: {
-            name: '',
-            email: '',
-            phone: '',
-            location: '',
-            profession: '',
-            aboutme: ''
-          },
-          skills: [],
-          experience: [],
-          education: []
-        }
-    );
+    const [data, setData] = useState({
+        personal: {
+            name: "",
+            email: "",
+            phone: "",
+            location: "",
+            profession: "",
+            aboutme: "",
+        },
+        skills: [],
+        experience: [],
+        education: [],
+    });
 
     const updatePersonal = (field, value) => {
         setData((prev) => {
@@ -85,41 +83,40 @@ function App() {
     };
 
     const addSkill = () => {
-      setData((prev) => {
-          return {
-              ...prev,
-              skills: [...prev.skills, {id: crypto.randomUUID(), skill: ''}],
-          };
-      });
+        setData((prev) => {
+            return {
+                ...prev,
+                skills: [...prev.skills, { id: crypto.randomUUID(), skill: "" }],
+            };
+        });
     };
 
     const delSkill = (skillId) => {
-      setData(prev => {
-        return {
-          ...prev,
-          skills: prev.skills.filter(skillItem => skillItem.id !== skillId)
-        }
-      })
-    }
+        setData((prev) => {
+            return {
+                ...prev,
+                skills: prev.skills.filter((skillItem) => skillItem.id !== skillId),
+            };
+        });
+    };
 
     const updateSkill = (skillId, value) => {
-      setData(prev => {
-        return {
-          ...prev,
-          skills: prev.skills.map(skillItem => {
-            if(skillItem.id === skillId) {
-              return {
-                ...skillItem,
-                skill: value
-              }
-            }
-            else {
-              return skillItem;
-            }
-          })
-        }
-      })
-    }
+        setData((prev) => {
+            return {
+                ...prev,
+                skills: prev.skills.map((skillItem) => {
+                    if (skillItem.id === skillId) {
+                        return {
+                            ...skillItem,
+                            skill: value,
+                        };
+                    } else {
+                        return skillItem;
+                    }
+                }),
+            };
+        });
+    };
 
     const handlers = {
         updateGenListItem,
@@ -128,24 +125,41 @@ function App() {
         updatePersonal,
         addSkill,
         delSkill,
-        updateSkill
+        updateSkill,
     };
 
     return (
         <>
             <div className="flex justify-between h-screen">
                 <div className="flex flex-col bg-[#062243] h-full w-135 px-10 py-5 overflow-y-auto print:hidden">
-                    <header className="flex justify-between items-center mt-5 mb-8 w-full border-b border-slate-600 pb-6">
-                        <h1 className="text-2xl">Simple CV Builder</h1>
-                        <div>
+                    <header className="flex flex-col gap-8 items-center mt-5 mb-8 w-full">
+                        <div className="flex flex-col items-center">
+                            <h1 className="text-2xl tracking-wide">
+                                Simple CV Builder <br />
+                            </h1>
+                            <h2 className="text-slate-400 text-sm italic tracking-wider leading-5 mt-2">
+                                Minimalist editor for your resume needs
+                            </h2>
+                        </div>
+                        <div className="flex justify-center items-center gap-5 w-full border-y border-slate-700 py-4">
                             <button
-                                className="text-slate-400 text-lg rounded-lg cursor-pointer"
+                                className="text-slate-400 border border-slate-600 text-sm tracking-wider rounded-lg cursor-pointer px-2 py-1"
+                                onClick={() => {
+                                    setData(spongeBob);
+                                }}
+                                title="Load Sample"
+                            >
+                                Load Sample
+                            </button>
+
+                            <button
+                                className="text-slate-100 bg-green-800 text-sm tracking-wider rounded-lg cursor-pointer px-2 py-1"
                                 onClick={() => {
                                     window.print();
                                 }}
                                 title="Print"
                             >
-                                <FaPrint />
+                                Print
                             </button>
                         </div>
                     </header>
