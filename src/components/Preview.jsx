@@ -4,14 +4,14 @@ import { FaPhone, FaEnvelopeOpen, FaLocationDot, FaCircle } from 'react-icons/fa
 function PreviewHeader({name, profession}) {
     return (
         <div className='text-center w-full'>
-            {name === null ? null : <h1 className='font-bold text-cv-primary text-5xl tracking-widest mb-2 text-ellipsis overflow-hidden'>{name.toUpperCase()}</h1>}
-            {profession === null ? null : <h2 className='text-cv-primary text-lg tracking-wider'>{profession.toUpperCase()}</h2>}
+            {name === '' ? null : <h1 className='font-bold text-cv-primary text-5xl tracking-widest mb-2 text-ellipsis overflow-hidden'>{name.toUpperCase()}</h1>}
+            {profession === '' ? null : <h2 className='text-cv-primary text-lg tracking-wider'>{profession.toUpperCase()}</h2>}
         </div>
     );
 }
 
 function Contact({email, phone, location}) {
-    if (email === null && phone === null && location === null) {
+    if (email === '' && phone === '' && location === '') {
         return null
     }
     return (
@@ -138,7 +138,7 @@ function Skills({skills}) {
 
 function Preview({data}) {
     return (
-        <div className='bg-[#f9f9f9] text-cv-primary font-Montserrat w-200 min-h-280 p-15 box-border flex flex-col justify-between'>
+        <div className='bg-[#f9f9f9] text-cv-primary font-Montserrat w-[21cm] min-h-[29.7cm] p-15 box-border flex flex-col justify-start gap-5'>
             <PreviewHeader name={data.personal.name} profession={data.personal.profession}/>
             <Contact email={data.personal.email} phone={data.personal.phone} location={data.personal.location} />
             <AboutMe aboutme={data.personal.aboutme} />

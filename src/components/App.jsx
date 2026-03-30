@@ -7,20 +7,19 @@ import "../index.css";
 
 function App() {
     const [data, setData] = useState(
-        // {
-        //   personal: {
-        //     name: null,
-        //     email: null,
-        //     phone: null,
-        //     location: null,
-        //     profession: null,
-        //     aboutme: null
-        //   },
-        //   skills: [],
-        //   experience: [],
-        //   education: []
-        // }
-        usmanRaza,
+        {
+          personal: {
+            name: '',
+            email: '',
+            phone: '',
+            location: '',
+            profession: '',
+            aboutme: ''
+          },
+          skills: [],
+          experience: [],
+          education: []
+        }
     );
 
     const updatePersonal = (field, value) => {
@@ -85,11 +84,23 @@ function App() {
         });
     };
 
+    const addSkill = (skill) => {
+      const id = crypto.randomUUID();
+
+      setData((prev) => {
+          return {
+              ...prev,
+              skills: [...prev.skills, {id, skill}],
+          };
+      });
+    };
+
     const handlers = {
         updateGenListItem,
         addGenListItem,
         delGenListItem,
         updatePersonal,
+        addSkill,
     };
 
     return (
@@ -99,16 +110,15 @@ function App() {
                     <header className="flex justify-between items-center mt-5 mb-8 w-full border-b border-slate-600 pb-6">
                         <h1 className="text-2xl">Simple CV Builder</h1>
                         <div>
-                          <button
-                              className="text-slate-400 text-lg rounded-lg cursor-pointer"
-                              onClick={() => {
-                                window.print();
-                              }}
-                              title="Print"
-                          >
-                              <FaPrint />
-                          </button>
-
+                            <button
+                                className="text-slate-400 text-lg rounded-lg cursor-pointer"
+                                onClick={() => {
+                                    window.print();
+                                }}
+                                title="Print"
+                            >
+                                <FaPrint />
+                            </button>
                         </div>
                     </header>
 
