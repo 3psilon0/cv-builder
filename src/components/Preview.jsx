@@ -122,11 +122,11 @@ function Skills({skills}) {
             <h2 className='text-xl font-bold border-b border-cv-primary pb-2'>SKILLS</h2>
             <div className='grid grid-cols-4 gap-2 text-xs tracking-wide'>
                 {
-                    skills.map((skill, index) => {
+                    skills.map((skillItem, index) => {
                         return (
                             <div className='flex items-center gap-3' key={index}>
                                 <FaCircle size="0.35rem"/>
-                                <p>{skill}</p>
+                                <p>{skillItem.skill}</p>
                             </div>
                         );
                     })
