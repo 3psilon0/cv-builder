@@ -91,10 +91,10 @@ function ItemContainer({ sectionName, itemList, handleAdd, handleEdit, handleDel
                     if (!button) return;
 
                     switch (button.dataset.buttonType) {
-                        case "ListEdit":
+                        case "GenListEdit":
                             handleEdit(event.currentTarget.dataset.itemId);
                             break;
-                        case "ListDel":
+                        case "GenListDel":
                             handleDelete(sectionName, event.currentTarget.dataset.itemId);
                             break;
                     }
@@ -111,13 +111,13 @@ function ItemContainer({ sectionName, itemList, handleAdd, handleEdit, handleDel
                 <div className="flex flex-col gap-6">
                     <button
                         className="opacity-70 hover:opacity-100 cursor-pointer"
-                        data-button-type={"ListEdit"}
+                        data-button-type={"GenListEdit"}
                     >
                         <FaPen size={"1.1rem"} />
                     </button>
                     <button
                         className="opacity-70 hover:opacity-100 cursor-pointer"
-                        data-button-type={"ListDel"}
+                        data-button-type={"GenListDel"}
                     >
                         <FaTrash size={"1.1rem"} />
                     </button>
