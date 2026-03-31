@@ -13,6 +13,7 @@ function ItemEditor({ item, handleChange, handleClose }) {
                     name="title"
                     onChange={handleChange}
                     value={item.title}
+                    placeholder="Edit title"
                 />
             </label>
 
@@ -84,21 +85,6 @@ function ItemContainer({ sectionName, itemList, handleAdd, handleEdit, handleDel
             <div
                 className="flex items-center bg-sky-800/40 rounded-xl border-l-8 border-sky-700 p-4"
                 key={item.id}
-                data-item-id={item.id}
-                onClick={(event) => {
-                    const button = event.target.closest("button");
-
-                    if (!button) return;
-
-                    switch (button.dataset.buttonType) {
-                        case "GenListEdit":
-                            handleEdit(event.currentTarget.dataset.itemId);
-                            break;
-                        case "GenListDel":
-                            handleDelete(sectionName, event.currentTarget.dataset.itemId);
-                            break;
-                    }
-                }}
             >
                 <div className="grow flex flex-col gap-2">
                     <h1 className="text-lg font-bold w-50 overflow-hidden text-ellipsis whitespace-nowrap">{item.title}</h1>
@@ -111,13 +97,13 @@ function ItemContainer({ sectionName, itemList, handleAdd, handleEdit, handleDel
                 <div className="flex flex-col gap-6">
                     <button
                         className="opacity-70 hover:opacity-100 cursor-pointer"
-                        data-button-type={"GenListEdit"}
+                        onClick={() => {handleEdit(item.id)}}
                     >
                         <FaPen size={"1.1rem"} />
                     </button>
                     <button
                         className="opacity-70 hover:opacity-100 cursor-pointer"
-                        data-button-type={"GenListDel"}
+                        onClick={() => {handleDelete(sectionName, item.id)}}
                     >
                         <FaTrash size={"1.1rem"} />
                     </button>

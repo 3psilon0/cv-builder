@@ -7,18 +7,6 @@ function EditorSkillList({ skillData, actions }) {
             <div
                 className="flex items-center bg-sky-800/40 rounded-lg border-l-8 border-sky-700 py-2 px-4"
                 key={skillItem.id}
-                data-skill-id={skillItem.id}
-                onClick={(event) => {
-                    const button = event.target.closest("button");
-
-                    if (!button) return;
-
-                    switch (button.dataset.buttonType) {
-                        case "SkillListDel":
-                            actions.delSkill(event.currentTarget.dataset.skillId);
-                            break;
-                    }
-                }}
             >
                 <div className="grow">
                     <input
@@ -32,7 +20,7 @@ function EditorSkillList({ skillData, actions }) {
 
                 <button
                     className="opacity-70 hover:opacity-100 cursor-pointer"
-                    data-button-type={"SkillListDel"}
+                    onClick={() => {actions.delSkill(skillItem.id)}}
                 >
                     <FaTrash size={"1.1rem"} />
                 </button>
