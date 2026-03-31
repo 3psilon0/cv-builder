@@ -61,10 +61,10 @@ function Education({programs}) {
         <section className='flex flex-col gap-5 my-5'>
             <h2 className='text-xl font-bold border-b border-cv-primary pb-2'>EDUCATION</h2>
             {
-                programs.map((program, index) => {
+                programs.map((program) => {
 
                     return (
-                        <div className='flex justify-start items-start gap-20 text-xs tracking-wide' key={index}>
+                        <div className='flex justify-start items-start gap-20 text-xs tracking-wide' key={program.id}>
                             <div className='flex flex-col justify-start items-start gap-2'>
                                 <h3 className='font-bold w-25'>{program.from} - {program.to}</h3>
                                 <h3 className='w-25'>{program.location}</h3>
@@ -91,10 +91,10 @@ function Experience({work}) {
         <section className='flex flex-col gap-5 my-5'>
             <h2 className='text-xl font-bold border-b border-cv-primary pb-2'>EXPERIENCE</h2>
             {
-                work.map((place, index) => {
+                work.map((place) => {
 
                     return (
-                        <div className='flex justify-start items-start gap-20 text-xs tracking-wide' key={index}>
+                        <div className='flex justify-start items-start gap-20 text-xs tracking-wide' key={place.id}>
                             <div className='flex flex-col justify-center items-start gap-2'>
                                 <h3 className='font-bold w-25'>{place.from} - {place.to}</h3>
                                 <h3 className='w-25'>{place.location}</h3>
